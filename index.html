@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The CMPND — Founding Membership</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050507;
+  --bg2: #0a0a0f;
+  --card: #0d0d14;
+  --border: rgba(255,255,255,0.06);
+  --text: #e8e8ec;
+  --dim: #6b6b80;
+  --muted: #3a3a4a;
+  --cyan: #00D4AA;
+  --cyan-glow: rgba(0,212,170,0.15);
+  --cyan-soft: rgba(0,212,170,0.08);
+  --red: #ff4d6a;
+  --gold: #ffd700;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 60px 24px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1px solid var(--cyan);
+  background: var(--cyan-soft);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 40px;
+  animation: fadeDown 0.8s ease-out;
+}
+
+.badge .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  max-width: 700px;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s ease-out 0.1s both;
+  position: relative;
+}
+
+.hero h1 .accent {
+  background: linear-gradient(135deg, var(--cyan), #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .sub {
+  font-size: 18px;
+  color: var(--dim);
+  max-width: 560px;
+  font-weight: 300;
+  margin-bottom: 48px;
+  animation: fadeUp 0.8s ease-out 0.2s both;
+  position: relative;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: fadeUp 0.8s ease-out 0.3s both;
+  position: relative;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 40px;
+  border-radius: 12px;
+  border: none;
+  background: var(--cyan);
+  color: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  box-shadow: 0 0 40px var(--cyan-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 60px rgba(0,212,170,0.3);
+  background: #00e8bb;
+}
+
+.hero-note {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: fadeUp 1s ease-out 0.6s both;
+}
+
+.scroll-hint .arrow {
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, var(--muted), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* ── SECTIONS ── */
+section {
+  padding: 100px 24px;
+  position: relative;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+section h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+section h2 .accent {
+  background: linear-gradient(135deg, var(--cyan), #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+section p.desc {
+  font-size: 16px;
+  color: var(--dim);
+  max-width: 600px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ── PROBLEM SECTION ── */
+.problem-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 40px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.problem-card {
+  background: var(--card);
+  padding: 28px 24px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.problem-card .icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.problem-card .label {
+  font-size: 14px;
+  color: var(--dim);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.problem-card .label strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ── VALUE STACK ── */
+.value-stack {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.value-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 28px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.value-item:first-child {
+  border-radius: 16px 16px 0 0;
+}
+
+.value-item:last-child {
+  border-radius: 0 0 16px 16px;
+}
+
+.value-item:hover {
+  background: rgba(0,212,170,0.03);
+  border-color: rgba(0,212,170,0.12);
+}
+
+.value-item .left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.value-item .name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.value-item .detail {
+  font-size: 12px;
+  color: var(--dim);
+  font-weight: 300;
+}
+
+.value-item .price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dim);
+  text-decoration: line-through;
+  text-decoration-color: var(--red);
+  white-space: nowrap;
+}
+
+.value-total {
+  margin-top: 4px;
+  background: linear-gradient(135deg, rgba(0,212,170,0.08), rgba(0,212,170,0.03));
+  border: 1px solid rgba(0,212,170,0.2);
+  border-radius: 16px;
+  padding: 32px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.value-total .label {
+  font-size: 14px;
+  color: var(--dim);
+  font-weight: 400;
+}
+
+.value-total .amount {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dim);
+  text-decoration: line-through;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 3px;
+}
+
+/* ── THE PRICE REVEAL ── */
+.price-reveal {
+  text-align: center;
+  padding: 120px 24px;
+  position: relative;
+}
+
+.price-reveal::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.price-you-pay {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.price-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(72px, 12vw, 120px);
+  font-weight: 700;
+  color: var(--cyan);
+  line-height: 1;
+  margin-bottom: 8px;
+  position: relative;
+  text-shadow: 0 0 80px var(--cyan-glow);
+}
+
+.price-per {
+  font-size: 16px;
+  color: var(--dim);
+  font-weight: 300;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.price-locked {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(255,215,0,0.08);
+  border: 1px solid rgba(255,215,0,0.2);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.price-compare {
+  max-width: 500px;
+  margin: 0 auto 48px;
+  position: relative;
+}
+
+.compare-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.compare-row:last-child { border: none; }
+
+.compare-row .what {
+  font-size: 14px;
+  color: var(--dim);
+  font-weight: 400;
+}
+
+.compare-row .cost {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--dim);
+  font-weight: 500;
+}
+
+.compare-row.highlight {
+  padding: 18px 20px;
+  background: var(--cyan-soft);
+  border: 1px solid rgba(0,212,170,0.15);
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.compare-row.highlight .what {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.compare-row.highlight .cost {
+  color: var(--cyan);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* ── BONUSES ── */
+.bonus-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.bonus-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all 0.3s;
+}
+
+.bonus-card:hover {
+  border-color: rgba(255,215,0,0.15);
+  background: rgba(255,215,0,0.02);
+}
+
+.bonus-card .emoji {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.bonus-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.bonus-card p {
+  font-size: 13px;
+  color: var(--dim);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* ── GUARANTEE ── */
+.guarantee-section {
+  text-align: center;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.guarantee-box {
+  max-width: 560px;
+  margin: 40px auto 0;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,212,170,0.15);
+  background: linear-gradient(135deg, rgba(0,212,170,0.04), transparent);
+}
+
+.guarantee-box .shield {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.guarantee-box h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.guarantee-box p {
+  font-size: 15px;
+  color: var(--dim);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ── PROOF ── */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-top: 40px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.proof-card {
+  background: var(--card);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.proof-card .number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cyan);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.proof-card .label {
+  font-size: 12px;
+  color: var(--dim);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ── SCARCITY BAR ── */
+.scarcity {
+  margin-top: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scarcity-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.scarcity-label .left { color: var(--dim); }
+.scarcity-label .right { color: var(--cyan); font-weight: 600; font-family: 'JetBrains Mono', monospace; }
+
+.scarcity-bar {
+  height: 6px;
+  background: var(--card);
+  border-radius: 100px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.scarcity-fill {
+  height: 100%;
+  width: 72%;
+  background: linear-gradient(90deg, var(--cyan), #00ffcc);
+  border-radius: 100px;
+  transition: width 1s ease-out;
+}
+
+.scarcity-note {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ── FINAL CTA ── */
+.final-cta {
+  text-align: center;
+  padding: 120px 24px 80px;
+  position: relative;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  width: 900px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.final-cta h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.final-cta p {
+  font-size: 16px;
+  color: var(--dim);
+  max-width: 480px;
+  margin: 0 auto 40px;
+  font-weight: 300;
+  position: relative;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 40px 24px 60px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-mark {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.footer-mark .bar {
+  width: 6px;
+  border-radius: 2px 2px 0 0;
+  background: var(--muted);
+}
+
+.footer-mark .bar:nth-child(1) { height: 6px; }
+.footer-mark .bar:nth-child(2) { height: 10px; }
+.footer-mark .bar:nth-child(3) { height: 15px; }
+.footer-mark .bar:nth-child(4) { height: 22px; }
+
+footer p {
+  font-size: 11px;
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .problem-grid { grid-template-columns: 1fr; }
+  .proof-grid { grid-template-columns: 1fr; }
+  
+  .value-item {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  
+  .value-total {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .compare-row {
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+  }
+  
+  section { padding: 70px 20px; }
+  
+  .hero { padding: 40px 20px; min-height: 90vh; }
+}
+
+/* ── DIVIDER ── */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--cyan);
+  margin: 20px 0;
+  opacity: 0.4;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="badge">
+    <span class="dot"></span>
+    FOUNDING MEMBERSHIPS NOW OPEN
+  </div>
+  
+  <h1>The investing edge Wall Street keeps to themselves.<br><span class="accent">Now $39/month.</span></h1>
+  
+  <p class="sub">An AI-powered intelligence system that watches the world, finds what the crowd hasn't found yet, and explains exactly how to act on it — even if you've never bought a stock.</p>
+  
+  <div class="hero-cta">
+    <a href="https://whop.com/the-cmpnd/founding-membership-39-month/" target="_blank" class="btn-primary">Become a Founding Member →</a>
+    <span class="hero-note">100 spots. $39/month locked for life. 7-day guarantee.</span>
+  </div>
+  
+  <div class="scroll-hint">
+    <span>See what's inside</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- ═══════ TRAILER ═══════ -->
+<section style="padding:60px 24px 80px; background:var(--bg);">
+  <div class="container" style="max-width:720px;">
+    <div style="
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 80px rgba(0,212,170,0.06), 0 20px 60px rgba(0,0,0,0.5);
+    ">
+      <!-- REPLACE THE VIDEO ID BELOW WITH YOUR ACTUAL YOUTUBE TRAILER ID -->
+      <!-- Example: if your YouTube URL is https://youtube.com/watch?v=abc123 then replace VIDEO_ID_HERE with abc123 -->
+      <iframe 
+        src="https://www.youtube.com/embed/porXls2_igo?rel=0&modestbranding=1&color=white" 
+        title="The CMPND Trailer"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        style="position:absolute; top:0; left:0; width:100%; height:100%;"
+      ></iframe>
+    </div>
+    <p style="text-align:center; margin-top:16px; font-size:12px; color:var(--muted); letter-spacing:2px; text-transform:uppercase;">Watch the trailer</p>
+  </div>
+</section>
+
+<!-- ═══════ PROBLEM ═══════ -->
+<section class="problem-section">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2>The tools exist. <span class="accent">You just never had access.</span></h2>
+    <p class="desc">Institutions spend millions on systems that scan markets, detect macro shifts, and filter opportunities. You've been expected to figure it out with a Robinhood app and a TikTok video.</p>
+    
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="icon">🏦</span>
+        <span class="label"><strong>Bloomberg Terminal:</strong> $24,000/year. Built for hedge funds. Not for you.</span>
+      </div>
+      <div class="problem-card">
+        <span class="icon">📉</span>
+        <span class="label"><strong>Signals groups:</strong> $200-250/month. They tell you what to buy. You never learn why.</span>
+      </div>
+      <div class="problem-card">
+        <span class="icon">🎓</span>
+        <span class="label"><strong>Online courses:</strong> $2,000-3,000. You watch videos. Then you're on your own.</span>
+      </div>
+      <div class="problem-card">
+        <span class="icon">📊</span>
+        <span class="label"><strong>38% of our communities</strong> are financially illiterate. Not because we can't learn — because nobody taught us.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PROOF ═══════ -->
+<section>
+  <div class="container">
+    <div class="section-label">The Proof</div>
+    <h2>Real money. <span class="accent">Real results.</span></h2>
+    <p class="desc">This isn't a backtest or a simulation. This is a real portfolio, using the same system you get access to inside The CMPND. 62% return. 82.7% win rate. While the market went negative.</p>
+    
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="number">+62%</div>
+        <div class="label">Portfolio return<br>Jan–Mar 2026</div>
+      </div>
+      <div class="proof-card">
+        <div class="number">82.7%</div>
+        <div class="label">Gain/loss ratio<br>winning on 5 of every 6 trades</div>
+      </div>
+      <div class="proof-card">
+        <div class="number">65pt</div>
+        <div class="label">Outperformance<br>vs the S&P 500</div>
+      </div>
+    </div>
+    
+    <p style="text-align:center; font-size:11px; color:var(--muted); margin-top:20px; max-width:500px; margin-left:auto; margin-right:auto;">
+      Past performance doesn't guarantee future results. Drew's track record reflects his personal portfolio using the CMPND Intelligence System. Individual results will vary.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════ VALUE STACK ═══════ -->
+<section style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">What You Get</div>
+    <h2>Everything inside. <span class="accent">One price.</span></h2>
+    <p class="desc">No tiers. No upsells. No locked features. Founding members get the full CMPND experience.</p>
+    
+    <div class="value-stack">
+      <div class="value-item">
+        <div class="left">
+          <div class="name">CMPND Intelligence System</div>
+          <div class="detail">AI-powered scanner • regime detection • five-filter analysis • plain English results</div>
+        </div>
+        <div class="price">$2,000/mo</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="left">
+          <div class="name">AI Trade Analyzer</div>
+          <div class="detail">Score any trade idea 1-10 • IV zone analysis • unlimited use</div>
+        </div>
+        <div class="price">$200/use</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="left">
+          <div class="name">Drew's Weekly Market Briefing</div>
+          <div class="detail">Full macro analysis • specific opportunities • framework breakdowns every Sunday</div>
+        </div>
+        <div class="price">$500/mo</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="left">
+          <div class="name">Weekly Live Calls with Q&A</div>
+          <div class="detail">Drew and Qwik on camera • deep dives • your questions answered live</div>
+        </div>
+        <div class="price">$200/mo</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="left">
+          <div class="name">4 Full Courses (36 Lessons)</div>
+          <div class="detail">Credit to options trading • progressive curriculum • downloadable resources</div>
+        </div>
+        <div class="price">$1,200+</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="left">
+          <div class="name">Private Community + Founders Access</div>
+          <div class="detail">Telegram group • AI helper • direct access to Drew and Qwik</div>
+        </div>
+        <div class="price">$100/mo</div>
+      </div>
+      
+      <div class="value-item">
+        <div class="left">
+          <div class="name">Resource Library</div>
+          <div class="detail">Cheat sheets • templates • calculators • IV/RV framework guides</div>
+        </div>
+        <div class="price">$97</div>
+      </div>
+    </div>
+    
+    <div class="value-total">
+      <div class="label">Total value of everything above</div>
+      <div class="amount">$4,297+/mo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ THE PRICE ═══════ -->
+<section class="price-reveal">
+  <div class="container">
+    <div class="price-you-pay">You pay</div>
+    <div class="price-number">$39</div>
+    <div class="price-per">per month</div>
+    <div class="price-locked">★ Founding members — locked for life</div>
+    
+    <div class="price-compare">
+      <div class="compare-row">
+        <span class="what">Bloomberg Terminal</span>
+        <span class="cost">$2,000/mo</span>
+      </div>
+      <div class="compare-row">
+        <span class="what">Average trading group</span>
+        <span class="cost">$225/mo</span>
+      </div>
+      <div class="compare-row">
+        <span class="what">Financial advisor (1 hour)</span>
+        <span class="cost">$300</span>
+      </div>
+      <div class="compare-row">
+        <span class="what">Online trading course</span>
+        <span class="cost">$2,500 one-time</span>
+      </div>
+      <div class="compare-row highlight">
+        <span class="what">The CMPND — everything above</span>
+        <span class="cost">$39/mo</span>
+      </div>
+    </div>
+    
+    <a href="https://whop.com/the-cmpnd/founding-membership-39-month/" target="_blank" class="btn-primary">Claim Your Founding Membership →</a>
+    <br><br>
+    <span class="hero-note">That's $1.30 a day. Less than your morning coffee.</span>
+  </div>
+</section>
+
+<!-- ═══════ BONUSES ═══════ -->
+<section>
+  <div class="container">
+    <div class="section-label">Founding Member Bonuses</div>
+    <h2>Because early <span class="accent">should be rewarded.</span></h2>
+    <p class="desc">These bonuses are only available to the first 100 members. Once the founding round closes, they're gone permanently.</p>
+    
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <span class="emoji">📈</span>
+        <div>
+          <h3>Drew vs S&P — Real-Money Portfolio Tracker</h3>
+          <p>Follow Drew's real portfolio as he attempts to grow $30K to $1M using the same system you're using. Every month — wins, losses, everything. You're watching the thesis play out with real money.</p>
+        </div>
+      </div>
+      
+      <div class="bonus-card">
+        <span class="emoji">🔐</span>
+        <div>
+          <h3>Founders-Only Group Chat (Closes at 100 Members)</h3>
+          <p>A private inner circle that will never be reopened. When The CMPND has 5,000 members, you'll still have direct access to a room of 100 people who were there from day one — including Drew and Qwik.</p>
+        </div>
+      </div>
+      
+      <div class="bonus-card">
+        <span class="emoji">⚡</span>
+        <div>
+          <h3>First Access to Every New Feature</h3>
+          <p>Every new tool, course, feature, or upgrade — founding members get it before anyone else. You're not just buying a product. You're helping build it. Your feedback shapes what The CMPND becomes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ GUARANTEE ═══════ -->
+<section class="guarantee-section">
+  <div class="container">
+    <div class="section-label">Zero Risk</div>
+    <h2>The <span class="accent">7-day guarantee.</span></h2>
+    
+    <div class="guarantee-box">
+      <div class="shield">🛡</div>
+      <h3>Learn something worth $39 or get your money back.</h3>
+      <p>Join The CMPND. Use the Intelligence System. Read the first weekly briefing. Attend the first live call. If after your first week you don't feel like you've already learned something worth more than $39 — DM Drew personally and get a full refund. No questions asked. No hoops. No friction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SCARCITY + FINAL CTA ═══════ -->
+<section class="final-cta">
+  <div class="container">
+    <div class="section-label">Limited Availability</div>
+    <h2>100 founding memberships. <span class="accent">Then the price goes up.</span></h2>
+    <p>Founding members lock in $39/month for life. When these spots are gone, the price increases to $79 — and the founding member bonuses close permanently.</p>
+    
+    <div class="scarcity">
+      <div class="scarcity-label">
+        <span class="left">Founding memberships claimed</span>
+        <span class="right">72 / 100</span>
+      </div>
+      <div class="scarcity-bar">
+        <div class="scarcity-fill"></div>
+      </div>
+      <div class="scarcity-note">Update this number manually as members join</div>
+    </div>
+    
+    <br><br>
+    
+    <a href="https://whop.com/the-cmpnd/founding-membership-39-month/" target="_blank" class="btn-primary" style="font-size:16px; padding:20px 48px;">
+      Become a Founding Member — $39/month →
+    </a>
+    <br><br>
+    <span class="hero-note">$39/month • Locked for life • 7-day money-back guarantee • Cancel anytime</span>
+    
+    <br><br><br>
+    
+    <p style="font-size:13px; color:var(--dim); font-weight:300; max-width:480px; margin:0 auto; font-style:italic;">
+      "The system runs every Sunday. This week's scan is already in the hands of every current member. You're either inside getting the intelligence, or you're outside wondering what you're missing."
+    </p>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="footer-mark">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <p>
+    THE CMPND — ENTER. LEARN. COMPOUND.<br><br>
+    The CMPND provides financial education only. We are not licensed financial advisors. Nothing here constitutes personalized financial advice. Past performance does not guarantee future results. Always consult a qualified professional before making investment decisions. Trading involves risk and you should never invest money you cannot afford to lose.
+  </p>
+</footer>
+
+</body>
+</html>
